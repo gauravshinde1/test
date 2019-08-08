@@ -1,14 +1,14 @@
-import { SET_ERRORS } from "../types";
+import { GET_NAME } from "../types";
 
 const initialState = {
-  errors: {}
+  getname: []
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case SET_ERRORS:
+    case GET_NAME:
       return {
-        errors: action.payload
+        getname: action.payload
       };
     default:
       return state;

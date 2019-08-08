@@ -1,6 +1,8 @@
-import { combineReducers } from 'redux';
-import errorReducer from './errorReducer';
+import { combineReducers } from "redux";
+import errorReducer from "./errorReducer";
+import getallName from "./nameReducers";
 
 export default combineReducers({
-    errors : errorReducer
-  })
+  errors: errorReducer,
+  getallname: getallName
+});
