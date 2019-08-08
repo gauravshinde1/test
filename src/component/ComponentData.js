@@ -1,56 +1,36 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { createName } from "../store/actions/action";
+import { createName } from '../store/actions/action';
 
-export class ComponentData extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: ""
-    };
-  }
 
-  onChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
+class Demo extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { value: '' };
+    }
 
-  onSubmit = e => {
-    e.preventDefault();
-    const formData = {
-      name: this.state.name
-    };
-    this.props.createName(formData);
-    alert("A name was submitted: " + this.state.name);
-    console.log(this.state.name);
-  };
+    handleChange = (event) => {
+        this.setState({ value: event.target.value });
+    }
 
-  render() {
-    return (
-      <React.Fragment>
-        <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control"
-              name="name"
-              onChange={this.onChange}
-              value={this.state.name}
-              aria-describedby="helpId"
-              placeholder="enter text"
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            submit
-          </button>
-        </form>
-      </React.Fragment>
-    );
-  }
+    handleSubmit = (event) => {
+        event.preventDefault();
+        let formdata = {
+            name: this.state.value
+        }
+        this.props.createName( formdata );
+    }
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    Name:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
+        )
+    }
 }
 
-export default connect(
-  null,
-  { createName }
-)(ComponentData);
+export default connect( null, { createName } )( Demo )
