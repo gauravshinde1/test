@@ -21,3 +21,17 @@ export const getAllName = () => dispatch => {
     })
     .catch(err => console.log(err));
 };
+
+export const updateData = updateData => dispatch => {
+  axios.patch(`http://localhost:3000/name/${updateData.id}`, updateData);
+  // .then(res => {
+
+  // })
+};
+
+export const deleteData = deleteData => dispatch => {
+  axios.delete(`http://localhost:3000/name/${deleteData.id}`);
+  // .then(res => {
+
+  // })
+};

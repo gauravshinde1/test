@@ -2,19 +2,8 @@
   "name": [
     {
       "id": 1,
-      "name": "gaurav"
-    },
-    {
-      "name": "kjh",
-      "id": 2
-    },
-    {
-      "name": "kjh",
-      "id": 3
-    },
-    {
       "name": "gaurav",
-      "id": 4
+      "updateName": "my"
     },
     {
       "name": "akshay",
@@ -27,10 +16,6 @@
     {
       "name": "zeeshan",
       "id": 7
-    },
-    {
-      "name": "ken",
-      "id": 8
     }
   ]
 }
